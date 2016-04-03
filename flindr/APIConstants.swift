@@ -19,13 +19,7 @@ class APIConstants {
     
     
     
-    
-    
-    //////////////////////////////////////////////////
-    // REPLACE HIS < #condition#> and < #code#> BEFORE COMMITTING
-    //////////////////////////////////////////////////
-    
-    
+
     
     static func updateLatestMovie() {
         let url = NSURL(fileURLWithPath: "http://api.themoviedb.org/3/movie/latest?" + apiKey)
