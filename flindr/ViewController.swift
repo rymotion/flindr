@@ -13,7 +13,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let LeftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeHandle(_:)))
+        let RightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeHandle(_:)))
         
+        LeftSwipe.direction = .Left
+        RightSwipe.direction = .Right
+        
+        view.addGestureRecognizer(LeftSwipe)
+        view.addGestureRecognizer(RightSwipe)
         
         // Testing
     }
@@ -23,15 +30,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func didSwipeLeft(){
-        // reject movie
-        nextMovie();
-    }
-    
-    func didSwipeRight(){
-        // accept and save movie
-        
-        nextMovie();
+    func swipeHandle(sender:UISwipeGestureRecognizer){
+        if <#condition#> {
+            <#code#>
+        }
     }
     
     func nextMovie(){
