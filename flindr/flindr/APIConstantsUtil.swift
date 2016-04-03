@@ -7,14 +7,21 @@
 //
 
 import Foundation
+import UIKit
 
 class APIConstantsUtil {
+    // Variables for MovieDb API calls
     static let URLBase = "https://api.themoviedb.org/3/"
     static let imageURLBase = "image.tmdb.org/t/p/w300/"
     static let movieGet = "movie/"
     static let apiKey = "api_key=954d7909c4c641cbf030293a45924bf9"
-    static let gbApiKey = "8EkTqrXQUiVwJsoyBnJHnQ2UzKrHUY"  // TEMPORARY (250 LIMIT)
     static var latestMovieID = 0 // Must be updated when opens
+    
+    // Variables for GuideBox API calls
+    static let gbURLBase = "https://api-public.guidebox.com/v1.43/US/"
+    static let gbApiKey = "8EkTqrXQUiVwJsoyBnJHnQ2UzKrHUY"  // TEMPORARY (250 LIMIT)
+    static let searchByGBKey = "/movie/"    // URL piece for finding based on GuideBox info
+    static let searchByMDBKey = "/search/movie/id/imdb/"    // URL piece for finding based on MovieDb
     
     // Data from latest random movie
     static var imgURL = NSURL()
@@ -23,88 +30,9 @@ class APIConstantsUtil {
     static var tagline = ""
     static var imdbID = ""
     
-    
-    // Updates the variable that contains the id of the latest movie in api
-    static func updateLatestMovie() {
-        let url = NSURL(string:"https://api.themoviedb.org/3/movie/latest?api_key=954d7909c4c641cbf030293a45924bf9")
-        let request = NSURLRequest(URL: url!)
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
-            guard error == nil && data != nil
-                else {
-                    // check for fundamental networking error
-                    print("error=\(error)")
-                    return
-            }
-            
-            if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-            }
-            
-            // Save Data as a JSON Dictionary
-            var dataAsJSON: [String: AnyObject]!
-            do {
-                dataAsJSON = try NSJSONSerialization.JSONObjectWithData(data!, options:[]) as! [String : AnyObject]
-            } catch let myJSONError {
-                print(myJSONError)
-            }
-            
-            // Save data to latestMovie
-            let id = dataAsJSON["id"]!
-            latestMovieID = Int((id as! NSNumber))
-            
-            findRandomMovie()
-        }
-        task.resume()
-    }
-    
-    // Finds random movie in API and updates the UI
-    static func findRandomMovie() {
-        let randomMovieID = arc4random_uniform(UInt32(500) + 1) + 1 // Between 1 and latestMovieID
-        
-        // Load random movie
-        let url = NSURL(string:"https://api.themoviedb.org/3/movie/\(randomMovieID)?api_key=954d7909c4c641cbf030293a45924bf9")
-        let request = NSURLRequest(URL: url!)
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
-            guard error == nil && data != nil
-                else {
-                    // check for fundamental networking error
-                    print("error=\(error)")
-                    return
-            }
-            
-            if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-                
-                // Start over search
-                self.findRandomMovie()
-            } else {
-                
-                // Save Data as a JSON Dictionary
-                var dataAsJSON: [String: AnyObject]!
-                do {
-                    dataAsJSON = try NSJSONSerialization.JSONObjectWithData(data!, options:[]) as! [String : AnyObject]
-                } catch let myJSONError {
-                    print(myJSONError)
-                }
-                
-                // Get the information from the returned Object
-                let posterPath = dataAsJSON["poster_path"]!
-                title = dataAsJSON["title"]! as! String    //name of the movie
-                description = dataAsJSON["overview"]! as! String // description
-                tagline = dataAsJSON["tagline"]! as! String
-                imdbID = dataAsJSON["imdb_id"] as! String
-                imgURL = NSURL(string: "http://image.tmdb.org/t/p/w300\(posterPath)")! //image URL for the movie poster
-                
-                // Update the UI
-                dispatch_async(dispatch_get_main_queue()){
-                    /*self.txtView.text = description as! String
-                    self.lblTitle.text = title as! String
-                    self.imgView.image = UIImage(data: NSData(contentsOfURL: imageURL)!)*/
-                    // UPDATE UI HERE
-                }
-            }
-            }.resume()
+    // Links to iTunes
+    func linkToITunes() {
+        let url = NSURL(string: "itms://itunes.apple.com/")
+        UIApplication.sharedApplication().openURL(url!)
     }
 }
