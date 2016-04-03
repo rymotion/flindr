@@ -39,23 +39,16 @@ class APIConstants {
             }
             
             // Save Data as a JSON Dictionary
-            var dataAsJSON: [AnyObject]!
-            var movieTitle = ""
+            var dataAsJSON: [String: AnyObject]!
             do {
-                dataAsJSON = try NSJSONSerialization.JSONObjectWithData(data!, options:[]) as! [AnyObject]
+                dataAsJSON = try NSJSONSerialization.JSONObjectWithData(data!, options:[]) as! [String : AnyObject]
                 print(dataAsJSON)
-                //let latestMovie = try NSJSONSerialization.JSONObjectWithData(dataAsJSON[0] as! NSData, options:[]) as! [String: AnyObject]!
             } catch let myJSONError {
                 print(myJSONError)
             }
             
             // Save data to latestMovie
-            print(dataAsJSON[0])
-            //latestMovie = dataAsJSON
-            
-            
-            
-            //latestMovie = latestMovieID
+            print(dataAsJSON["title"])
         }
         task.resume()
     }
