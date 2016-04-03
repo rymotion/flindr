@@ -14,7 +14,11 @@
 		053C36671CB0AC6A004DF7F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053C36651CB0AC6A004DF7F6 /* LaunchScreen.storyboard */; };
 		053C36721CB0AC6B004DF7F6 /* flindrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C36711CB0AC6B004DF7F6 /* flindrTests.swift */; };
 		053C367D1CB0AC6B004DF7F6 /* flindrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C367C1CB0AC6B004DF7F6 /* flindrUITests.swift */; };
+<<<<<<< Updated upstream
 		1712527D1CB0BA2700021857 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1712527C1CB0BA2700021857 /* APIConstants.swift */; };
+=======
+		056126161CB0CE5D002CD853 /* datapath.m in Sources */ = {isa = PBXBuildFile; fileRef = 056126151CB0CE5D002CD853 /* datapath.m */; };
+>>>>>>> Stashed changes
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +52,13 @@
 		053C36781CB0AC6B004DF7F6 /* flindrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = flindrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		053C367C1CB0AC6B004DF7F6 /* flindrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flindrUITests.swift; sourceTree = "<group>"; };
 		053C367E1CB0AC6B004DF7F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
 		1712527C1CB0BA2700021857 /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+=======
+		056126131CB0CE5C002CD853 /* flindr-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "flindr-Bridging-Header.h"; sourceTree = "<group>"; };
+		056126141CB0CE5D002CD853 /* datapath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = datapath.h; sourceTree = "<group>"; };
+		056126151CB0CE5D002CD853 /* datapath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = datapath.m; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +89,13 @@
 		053C36501CB0AC6A004DF7F6 = {
 			isa = PBXGroup;
 			children = (
+				056126141CB0CE5D002CD853 /* datapath.h */,
+				056126151CB0CE5D002CD853 /* datapath.m */,
 				053C365B1CB0AC6A004DF7F6 /* flindr */,
 				053C36701CB0AC6B004DF7F6 /* flindrTests */,
 				053C367B1CB0AC6B004DF7F6 /* flindrUITests */,
 				053C365A1CB0AC6A004DF7F6 /* Products */,
+				056126131CB0CE5C002CD853 /* flindr-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,7 +203,7 @@
 		053C36511CB0AC6A004DF7F6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = RyanPaglinawan;
 				TargetAttributes = {
@@ -260,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				053C365F1CB0AC6A004DF7F6 /* ViewController.swift in Sources */,
+				056126161CB0CE5D002CD853 /* datapath.m in Sources */,
 				053C365D1CB0AC6A004DF7F6 /* AppDelegate.swift in Sources */,
 				1712527D1CB0BA2700021857 /* APIConstants.swift in Sources */,
 			);
@@ -401,10 +415,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = flindr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RyanPaglinawan.flindr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "flindr-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -412,10 +429,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = flindr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RyanPaglinawan.flindr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "flindr-Bridging-Header.h";
 			};
 			name = Release;
 		};

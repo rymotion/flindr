@@ -31,9 +31,15 @@ class ViewController: UIViewController {
     }
     
     func swipeHandle(sender:UISwipeGestureRecognizer){
-        if <#condition#> {
-            <#code#>
+        if (sender.direction == .Left) {
+            NSLog("swiped left")
         }
+        if (sender.direction == .Right) {
+            NSLog("swiped right")
+        }
+        nextMovie()
+        NSLog("Next Movie loaded")
+        
     }
     
     func nextMovie(){
