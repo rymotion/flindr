@@ -22,7 +22,22 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func didSwipeLeft(){
+        // reject movie
+        nextMovie();
+    }
+    
+    func didSwipeRight(){
+        // accept and save movie
+        
+        nextMovie();
+    }
+    
+    func nextMovie(){
+        // this will get the next movie from the list on the database API
+        
+    }
 
 }
 
