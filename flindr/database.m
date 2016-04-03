@@ -11,7 +11,7 @@
 @implementation database
 NSString *databasePath;
 static sqlite3 *db; // database
-static sqlite3_stmt *statement = nil;
+static sqlite3_stmt *statement;
 
 -(BOOL)createDB {
     NSString *docsDir;
@@ -55,22 +55,20 @@ static sqlite3_stmt *statement = nil;
     databasePath = [[NSString alloc] initWithString:
                     [docsDir stringByAppendingPathComponent: @"movie.db"]];
      const char *dbpath = [databasePath UTF8String];
-
-    if (sqlite3_open(dbpath, &db) == SQLITE_OK)
-    {
+    
+    if (sqlite3_open(dbpath, &db) == SQLITE_OK){
         NSString *insertSQL = [NSString stringWithFormat:@"insert into movieDetail (movie, overview, imgURL) values (\"%@\",\"%@\", \"%@\")", movie, overview, imgURL];
         const char *insert_stmt = [insertSQL UTF8String];
         sqlite3_prepare_v2(db, insert_stmt,-1, &statement, NULL);
-        if (sqlite3_step(statement))
-        {
-            NSLog(@"New item added");
-        }
-        else
-        {
-            NSLog(@"Error adding element");
-        }
+        //if (sqlite3_step(statement)){
+           // NSLog(@"New item added");
+        //}
+        //else{
+           // NSLog(@"Error adding element");
+        //}
         //sqlite3_reset(statement); (This lihne will never be called)
     }
+    else NSLog(@"database corrupted");
     NSLog(@"we done did something");
 }
 
