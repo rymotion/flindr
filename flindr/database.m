@@ -51,7 +51,7 @@ static sqlite3_stmt *statement;
 }
 
 - (void) setData:(NSString *)movie name:(NSString *)overview name:(NSString*)tagline name:(NSURL *)imgURL {
-    NSString *docsDir = @"";
+    NSString *docsDir = [[self applicationDocumentsDirectory] absoluteString];
     databasePath = [[NSString alloc] initWithString:
                     [docsDir stringByAppendingPathComponent: @"movie.db"]];
      const char *dbpath = [databasePath UTF8String];
@@ -60,18 +60,22 @@ static sqlite3_stmt *statement;
         NSString *insertSQL = [NSString stringWithFormat:@"insert into movieDetail (movie, overview, imgURL) values (\"%@\",\"%@\", \"%@\")", movie, overview, imgURL];
         const char *insert_stmt = [insertSQL UTF8String];
         sqlite3_prepare_v2(db, insert_stmt,-1, &statement, NULL);
-        //if (sqlite3_step(statement)){
-           // NSLog(@"New item added");
-        //}
-        //else{
-           // NSLog(@"Error adding element");
-        //}
-        //sqlite3_reset(statement); (This lihne will never be called)
+        if (sqlite3_step(statement)){
+            NSLog(@"New item added");
+        }
+        else{
+            NSLog(@"Error adding element");
+        }
+        sqlite3_reset(statement);
     }
     else NSLog(@"database corrupted");
     NSLog(@"we done did something");
 }
 
+- (NSURL *)applicationDocumentsDirectory
+{
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
 
 
 
