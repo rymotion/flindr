@@ -14,7 +14,6 @@
 		053C36671CB0AC6A004DF7F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053C36651CB0AC6A004DF7F6 /* LaunchScreen.storyboard */; };
 		053C36721CB0AC6B004DF7F6 /* flindrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C36711CB0AC6B004DF7F6 /* flindrTests.swift */; };
 		053C367D1CB0AC6B004DF7F6 /* flindrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C367C1CB0AC6B004DF7F6 /* flindrUITests.swift */; };
-		1712527D1CB0BA2700021857 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1712527C1CB0BA2700021857 /* APIConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +47,6 @@
 		053C36781CB0AC6B004DF7F6 /* flindrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = flindrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		053C367C1CB0AC6B004DF7F6 /* flindrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flindrUITests.swift; sourceTree = "<group>"; };
 		053C367E1CB0AC6B004DF7F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1712527C1CB0BA2700021857 /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +103,6 @@
 				053C36631CB0AC6A004DF7F6 /* Assets.xcassets */,
 				053C36651CB0AC6A004DF7F6 /* LaunchScreen.storyboard */,
 				053C36681CB0AC6A004DF7F6 /* Info.plist */,
-				1712527C1CB0BA2700021857 /* APIConstants.swift */,
 			);
 			path = flindr;
 			sourceTree = "<group>";
@@ -261,7 +258,6 @@
 			files = (
 				053C365F1CB0AC6A004DF7F6 /* ViewController.swift in Sources */,
 				053C365D1CB0AC6A004DF7F6 /* AppDelegate.swift in Sources */,
-				1712527D1CB0BA2700021857 /* APIConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,7 +482,6 @@
 				053C36831CB0AC6B004DF7F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 		053C36841CB0AC6B004DF7F6 /* Build configuration list for PBXNativeTarget "flindrTests" */ = {
 			isa = XCConfigurationList;
@@ -495,7 +490,6 @@
 				053C36861CB0AC6B004DF7F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 		053C36871CB0AC6B004DF7F6 /* Build configuration list for PBXNativeTarget "flindrUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,7 +498,6 @@
 				053C36891CB0AC6B004DF7F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
