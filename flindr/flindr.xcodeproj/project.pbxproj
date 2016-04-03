@@ -14,7 +14,9 @@
 		0567609E1CB0EB4E00F91462 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0567609C1CB0EB4E00F91462 /* LaunchScreen.storyboard */; };
 		056760A91CB0EB4E00F91462 /* flindrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056760A81CB0EB4E00F91462 /* flindrTests.swift */; };
 		056760B41CB0EB4E00F91462 /* flindrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056760B31CB0EB4E00F91462 /* flindrUITests.swift */; };
-		056760C91CB0EBCA00F91462 /* datapath.m in Sources */ = {isa = PBXBuildFile; fileRef = 056760C71CB0EBCA00F91462 /* datapath.m */; };
+		05C688571CB0FC1A0041BA43 /* database.m in Sources */ = {isa = PBXBuildFile; fileRef = 05C688561CB0FC1A0041BA43 /* database.m */; };
+		05C6885A1CB0FC670041BA43 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C688581CB0FC670041BA43 /* libsqlite3.0.tbd */; };
+		05C6885B1CB0FC670041BA43 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C688591CB0FC670041BA43 /* libsqlite3.tbd */; };
 		1726E7901CB0EF4900DFB0C7 /* APIConstantsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1726E78F1CB0EF4900DFB0C7 /* APIConstantsUtil.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,9 +52,10 @@
 		056760B31CB0EB4E00F91462 /* flindrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flindrUITests.swift; sourceTree = "<group>"; };
 		056760B51CB0EB4E00F91462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		056760C11CB0EB7700F91462 /* flindr-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "flindr-Bridging-Header.h"; sourceTree = "<group>"; };
-		056760C61CB0EBCA00F91462 /* datapath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = datapath.h; sourceTree = "<group>"; };
-		056760C71CB0EBCA00F91462 /* datapath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = datapath.m; sourceTree = "<group>"; };
-		056760C81CB0EBCA00F91462 /* flindr-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "flindr-Bridging-Header.h"; sourceTree = "<group>"; };
+		05C688551CB0FC1A0041BA43 /* database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = database.h; sourceTree = "<group>"; };
+		05C688561CB0FC1A0041BA43 /* database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = database.m; sourceTree = "<group>"; };
+		05C688581CB0FC670041BA43 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		05C688591CB0FC670041BA43 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		1726E78F1CB0EF4900DFB0C7 /* APIConstantsUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstantsUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05C6885A1CB0FC670041BA43 /* libsqlite3.0.tbd in Frameworks */,
+				05C6885B1CB0FC670041BA43 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,9 +89,10 @@
 		056760871CB0EB4E00F91462 = {
 			isa = PBXGroup;
 			children = (
-				056760C61CB0EBCA00F91462 /* datapath.h */,
-				056760C71CB0EBCA00F91462 /* datapath.m */,
-				056760C81CB0EBCA00F91462 /* flindr-Bridging-Header.h */,
+				05C688581CB0FC670041BA43 /* libsqlite3.0.tbd */,
+				05C688591CB0FC670041BA43 /* libsqlite3.tbd */,
+				05C688551CB0FC1A0041BA43 /* database.h */,
+				05C688561CB0FC1A0041BA43 /* database.m */,
 				056760921CB0EB4E00F91462 /* flindr */,
 				056760A71CB0EB4E00F91462 /* flindrTests */,
 				056760B21CB0EB4E00F91462 /* flindrUITests */,
@@ -269,8 +275,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				056760961CB0EB4E00F91462 /* ViewController.swift in Sources */,
-				056760C91CB0EBCA00F91462 /* datapath.m in Sources */,
 				1726E7901CB0EF4900DFB0C7 /* APIConstantsUtil.swift in Sources */,
+				05C688571CB0FC1A0041BA43 /* database.m in Sources */,
 				056760941CB0EB4E00F91462 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
