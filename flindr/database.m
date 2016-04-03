@@ -50,8 +50,8 @@ static sqlite3_stmt *statement;
     return isSuccess;
 }
 
-- (void) setData:(NSString *)movie name:(NSString *)director name:(NSString *)language name:(NSString *)overview name:(NSString*)tagline name:(NSString *)genre name:(NSURL *)imgURL {
-    NSString *docsDir;
+- (void) setData:(NSString *)movie name:(NSString *)overview name:(NSString*)tagline name:(NSURL *)imgURL {
+    NSString *docsDir = @"";
     databasePath = [[NSString alloc] initWithString:
                     [docsDir stringByAppendingPathComponent: @"movie.db"]];
      const char *dbpath = [databasePath UTF8String];
