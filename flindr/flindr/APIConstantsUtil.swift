@@ -13,6 +13,7 @@ class APIConstantsUtil {
     static let imageURLBase = "image.tmdb.org/t/p/w300/"
     static let movieGet = "movie/"
     static let apiKey = "api_key=954d7909c4c641cbf030293a45924bf9"
+    static let gbApiKey = "8EkTqrXQUiVwJsoyBnJHnQ2UzKrHUY"  // TEMPORARY (250 LIMIT)
     static var latestMovieID = 0 // Must be updated when opens
     
     // Updates the variable that contains the id of the latest movie in api
