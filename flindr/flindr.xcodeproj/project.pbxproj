@@ -15,6 +15,7 @@
 		056760A91CB0EB4E00F91462 /* flindrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056760A81CB0EB4E00F91462 /* flindrTests.swift */; };
 		056760B41CB0EB4E00F91462 /* flindrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056760B31CB0EB4E00F91462 /* flindrUITests.swift */; };
 		056760C91CB0EBCA00F91462 /* datapath.m in Sources */ = {isa = PBXBuildFile; fileRef = 056760C71CB0EBCA00F91462 /* datapath.m */; };
+		1726E7901CB0EF4900DFB0C7 /* APIConstantsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1726E78F1CB0EF4900DFB0C7 /* APIConstantsUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		056760C61CB0EBCA00F91462 /* datapath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = datapath.h; sourceTree = "<group>"; };
 		056760C71CB0EBCA00F91462 /* datapath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = datapath.m; sourceTree = "<group>"; };
 		056760C81CB0EBCA00F91462 /* flindr-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "flindr-Bridging-Header.h"; sourceTree = "<group>"; };
+		1726E78F1CB0EF4900DFB0C7 /* APIConstantsUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstantsUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				0567609C1CB0EB4E00F91462 /* LaunchScreen.storyboard */,
 				0567609F1CB0EB4E00F91462 /* Info.plist */,
 				056760C11CB0EB7700F91462 /* flindr-Bridging-Header.h */,
+				1726E78F1CB0EF4900DFB0C7 /* APIConstantsUtil.swift */,
 			);
 			path = flindr;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			files = (
 				056760961CB0EB4E00F91462 /* ViewController.swift in Sources */,
 				056760C91CB0EBCA00F91462 /* datapath.m in Sources */,
+				1726E7901CB0EF4900DFB0C7 /* APIConstantsUtil.swift in Sources */,
 				056760941CB0EB4E00F91462 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,6 +499,7 @@
 				056760BA1CB0EB4E00F91462 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		056760BB1CB0EB4E00F91462 /* Build configuration list for PBXNativeTarget "flindrTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +508,7 @@
 				056760BD1CB0EB4E00F91462 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		056760BE1CB0EB4E00F91462 /* Build configuration list for PBXNativeTarget "flindrUITests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +517,7 @@
 				056760C01CB0EB4E00F91462 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
