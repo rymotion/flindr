@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0720"
+   LastUpgradeVersion = "0730"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -11,10 +11,11 @@
             buildForRunning = "YES"
             buildForProfiling = "YES"
             buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
+            buildForAnalyzing = "YES"
+            hideIssues = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "053C36581CB0AC6A004DF7F6"
+               BlueprintIdentifier = "0567608F1CB0EB4E00F91462"
                BuildableName = "flindr.app"
                BlueprintName = "flindr"
                ReferencedContainer = "container:flindr.xcodeproj">
@@ -32,7 +33,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "053C366C1CB0AC6B004DF7F6"
+               BlueprintIdentifier = "056760A31CB0EB4E00F91462"
                BuildableName = "flindrTests.xctest"
                BlueprintName = "flindrTests"
                ReferencedContainer = "container:flindr.xcodeproj">
@@ -42,7 +43,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "053C36771CB0AC6B004DF7F6"
+               BlueprintIdentifier = "056760AE1CB0EB4E00F91462"
                BuildableName = "flindrUITests.xctest"
                BlueprintName = "flindrUITests"
                ReferencedContainer = "container:flindr.xcodeproj">
@@ -52,7 +53,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "053C36581CB0AC6A004DF7F6"
+            BlueprintIdentifier = "0567608F1CB0EB4E00F91462"
             BuildableName = "flindr.app"
             BlueprintName = "flindr"
             ReferencedContainer = "container:flindr.xcodeproj">
@@ -75,7 +76,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "053C36581CB0AC6A004DF7F6"
+            BlueprintIdentifier = "0567608F1CB0EB4E00F91462"
             BuildableName = "flindr.app"
             BlueprintName = "flindr"
             ReferencedContainer = "container:flindr.xcodeproj">
@@ -94,7 +95,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "053C36581CB0AC6A004DF7F6"
+            BlueprintIdentifier = "0567608F1CB0EB4E00F91462"
             BuildableName = "flindr.app"
             BlueprintName = "flindr"
             ReferencedContainer = "container:flindr.xcodeproj">
