@@ -16,7 +16,5 @@ class TableViewController:UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    @IBAction func loadMovie(sender: UIButton) {
-        
-    }
+    
 }
