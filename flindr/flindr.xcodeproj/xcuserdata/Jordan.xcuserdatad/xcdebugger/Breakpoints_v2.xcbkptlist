@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "database.m"
-            timestampString = "481362401.626331"
+            filePath = "flindr/ViewController.swift"
+            timestampString = "481373497.400184"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "-createDB"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "swipeHandle(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "database.m"
-            timestampString = "481365893.852765"
+            filePath = "flindr/APIConstantsUtil.swift"
+            timestampString = "481373622.4875"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "-setData:name:name:name:name:name:name:"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "findRandomMovie()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "database.m"
-            timestampString = "481374566.401713"
+            filePath = "flindr/APIConstantsUtil.swift"
+            timestampString = "481373724.507471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "-setData:name:name:name:name:name:name:"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "findRandomMovie()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
