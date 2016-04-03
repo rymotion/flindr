@@ -115,11 +115,11 @@ class ViewController: UIViewController {
                 
                 // Get the information from the returned Object
                 let posterPath = dataAsJSON["poster_path"]!
-                let title = dataAsJSON["title"]! as! String    //name of the movie
-                let description = dataAsJSON["overview"]! as! String // description
-                let tagline = dataAsJSON["tagline"]! as! String
-                let imdbID = dataAsJSON["imdb_id"] as! String
-                let imgURL = NSURL(string: "http://image.tmdb.org/t/p/w300\(posterPath)")! //image URL for the movie poster
+                APIConstantsUtil.title = dataAsJSON["title"]! as! String    //name of the movie
+                APIConstantsUtil.description = dataAsJSON["overview"]! as! String // description
+                APIConstantsUtil.tagline = dataAsJSON["tagline"]! as! String
+                APIConstantsUtil.imdbID = dataAsJSON["imdb_id"] as! String
+                APIConstantsUtil.imgURL = NSURL(string: "http://image.tmdb.org/t/p/w300\(posterPath)")! //image URL for the movie poster
                 
                 // Update the UI
                 dispatch_async(dispatch_get_main_queue()){
