@@ -10,5 +10,6 @@
 #import "sqlite3.h"
 @interface database : NSObject
 -(BOOL)createDB;
-- (void) setData:(NSString *)movie name:(NSString *)overview name:(NSString*)tagline name:(NSURL *)imgURL;
+-(void) setData:(NSString *)movie name:(NSString *)overview name:(NSString*)tagline name:(NSURL *)imgURL;
+-(NSMutableArray *) getData: setData;
 @end

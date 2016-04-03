@@ -47,6 +47,8 @@ class ViewController: UIViewController {
         //this should load up another movie random if it has to
         APIConstantsUtil.findRandomMovie()
     }
+    @IBOutlet weak var information: UITextView!//   this is the film info
 
+    @IBOutlet weak var Marquee: UIImageView!
 }
 
