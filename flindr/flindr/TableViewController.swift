@@ -9,12 +9,15 @@
 import Foundation
 import UIKit
 
-class TableViewController:UIViewController {
+class TableViewController:UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.Info = 
+        self.PosterImage = UIImage(data: NSData(contentsOfURL: APIConstantsUtil.imgURL))
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+    @IBOutlet weak var Info: UIButton!
+    @IBOutlet weak var PosterImage: UIImageView!
 }

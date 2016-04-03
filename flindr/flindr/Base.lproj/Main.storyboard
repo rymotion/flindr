@@ -18,23 +18,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KL7-cn-Pgv">
+                                <rect key="frame" x="87" y="168" width="240" height="399"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llK-lm-vtt">
                                 <rect key="frame" x="184" y="686" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="ObT-RV-75O" kind="show" id="He6-mc-7Oa"/>
+                                    <segue destination="ug6-uI-QJu" kind="show" id="F1y-YJ-5KG"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KL7-cn-Pgv">
-                                <rect key="frame" x="87" y="168" width="240" height="399"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="llK-lm-vtt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="164" id="4h0-WS-3K0"/>
-                            <constraint firstItem="llK-lm-vtt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="666" id="9dL-Fu-YZ5"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="llK-lm-vtt" secondAttribute="trailing" constant="164" id="Oka-qv-jgS"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="llK-lm-vtt" secondAttribute="bottom" constant="20" id="Xk5-nA-USy"/>
+                            <constraint firstItem="KL7-cn-Pgv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="27b-Xb-rbB"/>
+                            <constraint firstItem="KL7-cn-Pgv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7lJ-rj-vLx"/>
+                            <constraint firstAttribute="bottom" secondItem="llK-lm-vtt" secondAttribute="bottom" constant="20" symbolic="YES" id="83n-4L-bSk"/>
+                            <constraint firstItem="llK-lm-vtt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="164" id="NTP-Jb-4VM"/>
+                            <constraint firstItem="KL7-cn-Pgv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="67" id="QVD-sw-6cd"/>
+                            <constraint firstItem="KL7-cn-Pgv" firstAttribute="centerX" secondItem="llK-lm-vtt" secondAttribute="centerX" id="ZXt-Y0-1yO"/>
+                            <constraint firstItem="KL7-cn-Pgv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="148" id="j1c-fk-QhH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="llK-lm-vtt" secondAttribute="trailing" constant="164" id="yui-rE-4xh"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
@@ -43,25 +47,25 @@
             </objects>
             <point key="canvasLocation" x="409" y="106"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="mm8-HK-g3d">
             <objects>
-                <collectionViewController id="ug6-uI-QJu" sceneMemberID="viewController">
+                <collectionViewController id="ug6-uI-QJu" customClass="TableViewController" customModule="flindr" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="KQh-36-24h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ypq-mp-SL0">
-                            <size key="itemSize" width="157" height="252"/>
+                            <size key="itemSize" width="157" height="244"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="R4m-mt-E2e">
-                                <rect key="frame" x="0.0" y="0.0" width="157" height="252"/>
+                                <rect key="frame" x="0.0" y="0.0" width="157" height="244"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="157" height="252"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="157" height="244"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hco-tu-1I4">
@@ -71,12 +75,17 @@
                                                 <segue destination="ObT-RV-75O" kind="show" id="c0e-iz-8sl"/>
                                             </connections>
                                         </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YCU-Gz-4zo">
+                                            <rect key="frame" x="0.0" y="0.0" width="157" height="244"/>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="Hco-tu-1I4" firstAttribute="centerY" secondItem="R4m-mt-E2e" secondAttribute="centerY" id="eMm-Np-fDp"/>
-                                    <constraint firstItem="Hco-tu-1I4" firstAttribute="centerX" secondItem="R4m-mt-E2e" secondAttribute="centerX" id="pCW-fj-3QJ"/>
+                                    <constraint firstItem="Hco-tu-1I4" firstAttribute="top" secondItem="R4m-mt-E2e" secondAttribute="topMargin" constant="103" id="RNH-qQ-TAp"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Hco-tu-1I4" secondAttribute="trailing" constant="48" id="TT2-1Y-s5W"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="Hco-tu-1I4" secondAttribute="bottom" constant="95" id="gRB-UE-GLG"/>
+                                    <constraint firstItem="Hco-tu-1I4" firstAttribute="leading" secondItem="R4m-mt-E2e" secondAttribute="leadingMargin" constant="47" id="qbi-ED-eXa"/>
                                 </constraints>
                             </collectionViewCell>
                         </cells>
@@ -87,6 +96,10 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="IXl-JU-5Km"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="Info" destination="Hco-tu-1I4" id="cqX-c6-5dl"/>
+                        <outlet property="PosterImage" destination="YCU-Gz-4zo" id="uZu-W9-t8U"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mA7-i1-HXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -150,7 +163,4 @@
             <point key="canvasLocation" x="1498" y="543"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="c0e-iz-8sl"/>
-    </inferredMetricsTieBreakers>
 </document>
