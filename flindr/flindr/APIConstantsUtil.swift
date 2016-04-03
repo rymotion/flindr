@@ -44,13 +44,13 @@ class APIConstantsUtil {
             let id = dataAsJSON["id"]!
             latestMovieID = Int(id as! String)!
             
-            updateUI()
+            findRandomMovie()
         }
         task.resume()
     }
     
     // Finds random movie in API and updates the UI
-    static func updateUI() {
+    static func findRandomMovie() {
         let randomMovieID = arc4random_uniform(UInt32(500) + 1) + 1 // Between 1 and latestMovieID
         
         // Load random movie
@@ -69,7 +69,7 @@ class APIConstantsUtil {
                 print("response = \(response)")
                 
                 // Start over search
-                self.updateUI()
+                self.findRandomMovie()
             } else {
                 
                 // Save Data as a JSON Dictionary
