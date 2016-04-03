@@ -54,7 +54,7 @@ static sqlite3_stmt *statement;
     NSString *docsDir = [[self applicationDocumentsDirectory] absoluteString];
     databasePath = [[NSString alloc] initWithString:
                     [docsDir stringByAppendingPathComponent: @"movie.db"]];
-     const char *dbpath = [databasePath UTF8String];
+    const char *dbpath = [databasePath UTF8String];
     
     if (sqlite3_open(dbpath, &db) == SQLITE_OK){
         NSString *insertSQL = [NSString stringWithFormat:@"insert into movieDetail (movie, overview, imgURL) values (\"%@\",\"%@\", \"%@\")", movie, overview, imgURL];
@@ -72,11 +72,38 @@ static sqlite3_stmt *statement;
     NSLog(@"we done did something");
 }
 
+- (NSMutableArray *) getData: setData{
+    NSString *docsDir = [[self applicationDocumentsDirectory] absoluteString];
+    databasePath = [[NSString alloc] initWithString:
+                    [docsDir stringByAppendingPathComponent:@"movie.db"]];
+    const char *dbpath = [databasePath UTF8String];
+    
+    if (sqlite3_open(dbpath, &db) == SQLITE_OK) {
+        NSString *readSQL = [NSString stringWithFormat:@"select * from movieDetail"];
+        NSMutableArray *resultArray = [NSMutableArray new];
+        if (sqlite3_prepare_v2(db, [readSQL UTF8String], -1, &statement, NULL) == SQLITE_OK) {
+            while (sqlite3_step(statement) == SQLITE_ROW) {
+                NSString *movie = [[NSString alloc] initWithUTF8String:
+                                   (const char *) sqlite3_column_text(statement, 0)];
+                [resultArray addObject:movie];
+                NSString *overview = [[NSString alloc] initWithUTF8String:
+                                      (const char *) sqlite3_column_text(statement, 0)];
+                [resultArray addObject:overview];
+                NSString *imgURL = [[NSString alloc] initWithUTF8String:
+                                    (const char *) sqlite3_column_text(statement, 0)];
+                [resultArray addObject:imgURL];
+            }
+            sqlite3_reset(statement);
+        }
+        return resultArray;
+    }
+    return nil;
+}
+
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
-
 
 
 @end

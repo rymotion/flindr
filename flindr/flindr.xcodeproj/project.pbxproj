@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		053F393B1CB1602400009C37 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053F393A1CB1602400009C37 /* TableViewController.swift */; };
 		056760941CB0EB4E00F91462 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056760931CB0EB4E00F91462 /* AppDelegate.swift */; };
 		056760961CB0EB4E00F91462 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056760951CB0EB4E00F91462 /* ViewController.swift */; };
 		056760991CB0EB4E00F91462 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056760971CB0EB4E00F91462 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		053F393A1CB1602400009C37 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		056760901CB0EB4E00F91462 /* flindr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flindr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		056760931CB0EB4E00F91462 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		056760951CB0EB4E00F91462 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				056760931CB0EB4E00F91462 /* AppDelegate.swift */,
 				056760951CB0EB4E00F91462 /* ViewController.swift */,
+				053F393A1CB1602400009C37 /* TableViewController.swift */,
 				056760971CB0EB4E00F91462 /* Main.storyboard */,
 				0567609A1CB0EB4E00F91462 /* Assets.xcassets */,
 				0567609C1CB0EB4E00F91462 /* LaunchScreen.storyboard */,
@@ -277,6 +280,7 @@
 				056760961CB0EB4E00F91462 /* ViewController.swift in Sources */,
 				1726E7901CB0EF4900DFB0C7 /* APIConstantsUtil.swift in Sources */,
 				05C688571CB0FC1A0041BA43 /* database.m in Sources */,
+				053F393B1CB1602400009C37 /* TableViewController.swift in Sources */,
 				056760941CB0EB4E00F91462 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
