@@ -21,7 +21,9 @@ class APIConstants {
     
     
     
-    
+    //////////////////////////////////////////////////
+    // REPLACE HIS < #condition#> and < #code#> BEFORE COMMITTING
+    //////////////////////////////////////////////////
     
     
     
@@ -47,14 +49,15 @@ class APIConstants {
             var movieTitle = ""
             do {
                 dataAsJSON = try NSJSONSerialization.JSONObjectWithData(data!, options:[]) as! [AnyObject]
-                let latestMovie = try NSJSONSerialization.JSONObjectWithData(dataAsJSON[0] as! NSData, options:[]) as! [String: AnyObject]!
+                print(dataAsJSON)
+                //let latestMovie = try NSJSONSerialization.JSONObjectWithData(dataAsJSON[0] as! NSData, options:[]) as! [String: AnyObject]!
             } catch let myJSONError {
                 print(myJSONError)
             }
             
             // Save data to latestMovie
             print(dataAsJSON[0])
-            latestMovie = dataAsJSON
+            //latestMovie = dataAsJSON
             
             
             
