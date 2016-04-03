@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         view.addGestureRecognizer(LeftSwipe)
         view.addGestureRecognizer(RightSwipe)
         
+        APIConstantsUtil.updateLatestMovie()    // Starts the UI Update Process
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,7 +38,7 @@ class ViewController: UIViewController {
         if (sender.direction == .Right) {
             print("Swipe right")
             //also save to a database later
-            database.saveData(title, description, imageURL)
+            database().setData(APIConstantsUtil.title, name: APIConstantsUtil.description, name: APIConstantsUtil.tagline, name: APIConstantsUtil.imgURL)
             nextMovie()
         }
     }

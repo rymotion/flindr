@@ -48,7 +48,7 @@ static sqlite3_stmt *statement = nil;
     }
     return isSuccess;
 }
-- (void) setData:(NSString *)movie name:(NSString *)director name:(NSString *)language name:(NSString *)overview name:(NSString*)tagline name:(NSString *)genre name:(NSURL *)imgURL {
+- (void) setData:(NSString *)movie name:(NSString *)overview name:(NSString*)tagline name:(NSURL *)imgURL {
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &db) == SQLITE_OK)
     {

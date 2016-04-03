@@ -16,6 +16,14 @@ class APIConstantsUtil {
     static let gbApiKey = "8EkTqrXQUiVwJsoyBnJHnQ2UzKrHUY"  // TEMPORARY (250 LIMIT)
     static var latestMovieID = 0 // Must be updated when opens
     
+    // Data from latest random movie
+    static var imgURL = NSURL()
+    static var title = ""    //name of the movie
+    static var description = "" // description
+    static var tagline = ""
+    static var imdbID = ""
+    
+    
     // Updates the variable that contains the id of the latest movie in api
     static func updateLatestMovie() {
         let url = NSURL(string:"https://api.themoviedb.org/3/movie/latest?api_key=954d7909c4c641cbf030293a45924bf9")
@@ -43,7 +51,7 @@ class APIConstantsUtil {
             
             // Save data to latestMovie
             let id = dataAsJSON["id"]!
-            latestMovieID = Int(id as! String)!
+            latestMovieID = Int((id as! NSNumber))
             
             findRandomMovie()
         }
@@ -82,11 +90,12 @@ class APIConstantsUtil {
                 }
                 
                 // Get the information from the returned Object
-                let posterPath = dataAsJSON["poster_path"]! 
-                let title = dataAsJSON["title"]!    //name of the movie
-                let description = dataAsJSON["overview"]! // description
-                let tagline = dataAsJSON["tagline"]!
-                let imageURL = NSURL(string: "http://image.tmdb.org/t/p/w300\(posterPath)")! //image URL for the movie poster
+                let posterPath = dataAsJSON["poster_path"]!
+                title = dataAsJSON["title"]! as! String    //name of the movie
+                description = dataAsJSON["overview"]! as! String // description
+                tagline = dataAsJSON["tagline"]! as! String
+                imdbID = dataAsJSON["imdb_id"] as! String
+                imgURL = NSURL(string: "http://image.tmdb.org/t/p/w300\(posterPath)")! //image URL for the movie poster
                 
                 // Update the UI
                 dispatch_async(dispatch_get_main_queue()){
