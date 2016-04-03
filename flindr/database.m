@@ -12,9 +12,7 @@
 NSString *databasePath;
 static sqlite3 *db; // database
 static sqlite3_stmt *statement = nil;
-//static sqlite3_stmt *enableForeignKey;
--(BOOL)createDB
-{
+-(BOOL)createDB {
     NSString *docsDir;
     NSArray *dirPaths;
     // Get the documents directory
@@ -33,7 +31,7 @@ static sqlite3_stmt *statement = nil;
         {
             char *errMsg;
             const char *sql_stmt =
-            "create table if not exists movieDetail (movie text, director text, language text, overview text, tagline text, genre text, imgURL text)";
+            "create table if not exists movieDetail (imdb_id integer primary key, movie text, overview text, imgURL text)";
             if (sqlite3_exec(db, sql_stmt, NULL, NULL, &errMsg)
                 != SQLITE_OK)
             {
@@ -50,25 +48,24 @@ static sqlite3_stmt *statement = nil;
     }
     return isSuccess;
 }
-- (BOOL) setData:(NSString *)movie name:(NSString *)director name:(NSString *)language name:(NSString *)overview name:(NSString*)tagline name:(NSString *)genre name:(NSURL *)imgURL
-{
+- (void) setData:(NSString *)movie name:(NSString *)director name:(NSString *)language name:(NSString *)overview name:(NSString*)tagline name:(NSString *)genre name:(NSURL *)imgURL {
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &db) == SQLITE_OK)
     {
-        NSString *insertSQL = [NSString stringWithFormat:@"insert into movieDetail (movie,director,language,overview,tagline,genre,imgURL,text) values (\"%@\",\"%@\",\"%@\",\"%@\",\"%@\",\"%@\",\"%@\")", movie, director, language, overview, tagline, genre, imgURL];
+        NSString *insertSQL = [NSString stringWithFormat:@"insert into movieDetail (movie, overview, imgURL) values (\"%@\",\"%@\", \"%@\")", movie, overview, imgURL];
         const char *insert_stmt = [insertSQL UTF8String];
         sqlite3_prepare_v2(db, insert_stmt,-1, &statement, NULL);
         if (sqlite3_step(statement) == SQLITE_DONE)
         {
-            return YES;
+            NSLog(@"New item added");
         }
         else
         {
-            return NO;
+            NSLog(@"Error adding element");
         }
         //sqlite3_reset(statement); (This lihne will never be called)
     }
-    return NO;
+    NSLog(@"we done did something");
 }
 
 

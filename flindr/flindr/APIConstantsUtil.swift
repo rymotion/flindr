@@ -82,11 +82,11 @@ class APIConstantsUtil {
                 }
                 
                 // Get the information from the returned Object
-                let posterPath = dataAsJSON["poster_path"]!
-                let title = dataAsJSON["title"]!
-                let description = dataAsJSON["overview"]!
-                
-                let imageURL = NSURL(string: "http://image.tmdb.org/t/p/w300\(posterPath)")!
+                let posterPath = dataAsJSON["poster_path"]! 
+                let title = dataAsJSON["title"]!    //name of the movie
+                let description = dataAsJSON["overview"]! // description
+                let tagline = dataAsJSON["tagline"]!
+                let imageURL = NSURL(string: "http://image.tmdb.org/t/p/w300\(posterPath)")! //image URL for the movie poster
                 
                 // Update the UI
                 dispatch_async(dispatch_get_main_queue()){

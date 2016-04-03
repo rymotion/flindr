@@ -37,12 +37,14 @@ class ViewController: UIViewController {
         if (sender.direction == .Right) {
             print("Swipe right")
             //also save to a database later
+            database.saveData(title, description, imageURL)
             nextMovie()
         }
     }
     
     func nextMovie(){
-        
+        //this should load up another movie random if it has to
+        APIConstantsUtil.findRandomMovie()
     }
 
 }
