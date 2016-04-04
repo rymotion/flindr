@@ -29,10 +29,4 @@ class APIConstantsUtil {
     static var description = "" // description
     static var tagline = ""
     static var imdbID = ""
-    
-    // Links to iTunes
-    func linkToITunes() {
-        let url = NSURL(string: "itms://itunes.apple.com/")
-        UIApplication.sharedApplication().openURL(url!)
-    }
 }
