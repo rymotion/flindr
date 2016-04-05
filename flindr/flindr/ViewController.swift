@@ -9,9 +9,31 @@
 import UIKit
 
 class ViewController: UIViewController {
+    // Favorites
+    static var favorites: NSMutableArray!
+    
+    
+    static var isFirstTimeLoading = true
 
+    @IBOutlet weak var txtDetails: UITextView!
+    @IBOutlet weak var imgViewDetails: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if let data = NSUserDefaults.standardUserDefaults().objectForKey("favorites") as? NSData {
+            ViewController.favorites = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! NSMutableArray!
+        }
+        else {
+            ViewController.favorites = NSMutableArray()
+            let data = NSKeyedArchiver.archivedDataWithRootObject(ViewController.favorites)
+            NSUserDefaults.standardUserDefaults().setObject(data, forKey: "favorites")
+        }
+        
+        
+        // Init view controllers
+        let rootViewController = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("rootViewController")
+        let detailsViewController = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("detailsViewController")
+        
         // Do any additional setup after loading the view, typically from a nib.c
         let LeftSwipe = UISwipeGestureRecognizer(target: self, action: "swipeHandle:")
         let RightSwipe = UISwipeGestureRecognizer(target: self, action: "swipeHandle:")
@@ -21,8 +43,15 @@ class ViewController: UIViewController {
         
         view.addGestureRecognizer(LeftSwipe)
         view.addGestureRecognizer(RightSwipe)
-        
-        updateLatestMovie()    // Starts the UI Update Process
+        if(ViewController.isFirstTimeLoading) {
+            ViewController.isFirstTimeLoading = false
+            updateLatestMovie()    // Starts the UI Update Process
+        } else {
+            ViewController.isFirstTimeLoading = true
+            imgViewDetails.image =  UIImage(data: NSData(contentsOfURL: APIConstantsUtil.imgURL)!)
+            txtDetails.text = APIConstantsUtil.description
+            lblText.text = APIConstantsUtil.title
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,7 +67,8 @@ class ViewController: UIViewController {
         if (sender.direction == .Right) {
             print("Swipe right")
             //also save to a database later
-            database().setData(APIConstantsUtil.title, name: APIConstantsUtil.description, name: APIConstantsUtil.tagline, name: APIConstantsUtil.imgURL)
+            //database().setData(APIConstantsUtil.title, name: APIConstantsUtil.description, name: APIConstantsUtil.tagline, name: APIConstantsUtil.imgURL)
+            ViewController.favorites.addObject(APIConstantsUtil.title)
             nextMovie()
         }
     }
@@ -115,11 +145,11 @@ class ViewController: UIViewController {
                 
                 // Get the information from the returned Object
                 let posterPath = dataAsJSON["poster_path"]!
-                let title = dataAsJSON["title"]! as! String    //name of the movie
-                let description = dataAsJSON["overview"]! as! String // description
-                let tagline = dataAsJSON["tagline"]! as! String
-                let imdbID = dataAsJSON["imdb_id"] as! String
-                let imgURL = NSURL(string: "http://image.tmdb.org/t/p/w300\(posterPath)")! //image URL for the movie poster
+                APIConstantsUtil.title = dataAsJSON["title"]! as! String    //name of the movie
+                APIConstantsUtil.description = dataAsJSON["overview"]! as! String // description
+                APIConstantsUtil.tagline = dataAsJSON["tagline"]! as! String
+                APIConstantsUtil.imdbID = dataAsJSON["imdb_id"] as! String
+                APIConstantsUtil.imgURL = NSURL(string: "http://image.tmdb.org/t/p/w300\(posterPath)")! //image URL for the movie poster
                 
                 // Update the UI
                 dispatch_async(dispatch_get_main_queue()){
@@ -127,14 +157,27 @@ class ViewController: UIViewController {
                      self.lblTitle.text = title as! String
                      self.imgView.image = UIImage(data: NSData(contentsOfURL: imageURL)!)*/
                     // UPDATE UI HERE
+                    //self.information.text = APIConstantsUtil.description
+                    self.Marquee.image = UIImage(data: NSData(contentsOfURL: APIConstantsUtil.imgURL)!)
                 }
             }
             }.resume()
     }
 
-    
+
+    @IBAction func linkToiTunes(sender: AnyObject) {
+        let url = NSURL(string: "itms://itunes.apple.com/")
+        UIApplication.sharedApplication().openURL(url!)
+    }
+   
+    @IBAction func saveMovie(sender: AnyObject) {
+        ViewController.favorites.addObject(APIConstantsUtil.title)
+    }
+
+
     
     @IBOutlet weak var information: UITextView!//   this is the film info
+    @IBOutlet weak var lblText: UILabel!
 
     @IBOutlet weak var Marquee: UIImageView!
 }
